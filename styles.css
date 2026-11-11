@@ -227,3 +227,15 @@ h1:focus{outline:none}
      transition:opacity .25s,transform .4s;
    }
    .sede-card:hover .sede-card__img{opacity:.5;transform:scale(1.05)}
+
+/* Cabecera: escudo grande a la izquierda y 🔥 en la fila del menú */
+.header-wrap{max-width:var(--maxw);margin:0 auto;padding:6px 16px;display:flex;align-items:center;gap:12px}
+.header-main{flex:1;min-width:0}
+.header-main .header-top{max-width:none;margin:0;padding:6px 0 4px}
+.header-main .main-nav{max-width:none;margin:0;padding:0 0 6px}
+.header-wrap .escudo{height:92px;width:auto;margin:0}
+.nav-flame{display:flex;align-items:center;font-size:1.6rem;padding:0 2px;filter:drop-shadow(0 0 8px var(--red-glow))}
+@media (max-width:480px){
+  .header-wrap{gap:8px}
+  .header-wrap .escudo{height:72px}
+}
