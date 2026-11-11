@@ -15,6 +15,21 @@
 
 <!-- CSS: todo el diseño vive en styles.css (misma carpeta) -->
 <link rel="stylesheet" href="styles.css">
+  <style>
+/* Cabecera: escudo grande a la izquierda */
+.header-wrap{max-width:960px;margin:0 auto;padding:6px 16px;display:flex;align-items:center;gap:20px}
+.header-main{flex:1;min-width:0}
+.header-main .header-top{max-width:none;margin:0;padding:6px 0 4px}
+.header-main .main-nav{max-width:none;margin:0;padding:0 0 6px}
+.escudo-link{display:block;flex:0 0 auto;line-height:0}
+.header-wrap .escudo{height:92px;width:auto;margin:0;display:block}
+.main-nav ul{align-items:center}
+.nav-flame{display:flex;align-items:center;font-size:1.6rem;line-height:1;padding:0 2px;filter:drop-shadow(0 0 8px rgba(255,23,68,.45))}
+@media (max-width:480px){
+  .header-wrap{gap:10px}
+  .header-wrap .escudo{height:72px}
+}
+</style>
 </head>
 
 <body>
