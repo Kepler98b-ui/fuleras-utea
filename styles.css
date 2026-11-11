@@ -52,7 +52,8 @@ h1:focus{outline:none}
 .logo__mark{font-size:1.7rem;filter:drop-shadow(0 0 8px var(--red-glow))}
 .logo__text{font-family:var(--font-display);font-size:1.5rem;letter-spacing:1.5px;text-transform:uppercase;line-height:1}
 .logo__text small{display:block;font-size:.72rem;letter-spacing:4px;color:var(--red);text-shadow:0 0 10px var(--red-glow);margin-top:2px}
-.escudo{height:34px;width:auto;object-fit:contain;margin-left:2px}
+.escudo{height:56px;width:auto;object-fit:contain;margin-right:6px}
+@media (max-width:480px){ .escudo{height:44px} }
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;
