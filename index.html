@@ -29,7 +29,15 @@
   .header-wrap{gap:10px}
   .header-wrap .escudo{height:72px}
 }
-      .header-main .logo__mark{font-size:2.4rem;line-height:1} 
+      .header-main .logo__mark{font-size:2.4rem;line-height:1}
+    /* 🔥 animados */
+.flame,.logo__mark{display:inline-block;transform-origin:50% 90%;animation:llama 1.2s ease-in-out infinite}
+@keyframes llama{
+  0%,100%{transform:scale(1) rotate(-3deg);filter:drop-shadow(0 0 4px rgba(255,90,0,.6))}
+  25%{transform:scale(1.12,1.2) rotate(3deg);filter:drop-shadow(0 0 10px rgba(255,140,0,.9))}
+  50%{transform:scale(.95,1.05) rotate(-2deg);filter:drop-shadow(0 0 6px rgba(255,60,0,.7))}
+  75%{transform:scale(1.08,1.15) rotate(2deg);filter:drop-shadow(0 0 12px rgba(255,160,0,.9))}
+}
 </style>
 </head>
 
@@ -307,5 +315,38 @@
 
 <!-- JS: toda la lógica vive en script.js (misma carpeta) -->
 <script src="script.js" defer></script>
+  <script>
+/* Envuelve cada 🔥 en <span class="flame"> para poder animarlo */
+(function () {
+  function envolver(raiz) {
+    var walker = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, null);
+    var nodos = [], n;
+    while ((n = walker.nextNode())) {
+      if (n.nodeValue.indexOf('🔥') === -1) continue;
+      var p = n.parentElement;
+      if (!p || p.closest('.flame, .logo__mark, option, script, style, textarea')) continue;
+      nodos.push(n);
+    }
+    nodos.forEach(function (t) {
+      var partes = t.nodeValue.split('🔥');
+      var frag = document.createDocumentFragment();
+      partes.forEach(function (txt, i) {
+        if (i > 0) {
+          var f = document.createElement('span');
+          f.className = 'flame';
+          f.setAttribute('aria-hidden', 'true');
+          f.textContent = '🔥';
+          frag.appendChild(f);
+        }
+        if (txt) frag.appendChild(document.createTextNode(txt));
+      });
+      t.parentNode.replaceChild(frag, t);
+    });
+  }
+  envolver(document.body);
+  new MutationObserver(function () { envolver(document.body); })
+    .observe(document.body, { childList: true, subtree: true });
+})();
+</script>
 </body>
 </html>
