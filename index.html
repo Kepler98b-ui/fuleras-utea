@@ -25,24 +25,30 @@
 
 <!-- ================= CABECERA + MENÚ ================= -->
 <header class="site-header">
-  <div class="header-top">
-    <a class="logo" href="#inicio" aria-label="Fuleras UTEA — ir al inicio">
-  <img class="escudo" src="assets/escudo-utea.png" alt="Escudo" width="34" height="34" hidden>
-  <span class="logo__mark" aria-hidden="true">🔥</span>
-  <span class="logo__text">Fuleras<small>UTEA</small></span>
-</a>
-    <a class="btn btn--sm" href="#contacto">✍️ Confesar</a>
+  <div class="header-wrap">
+    <a class="escudo-link" href="#inicio" aria-label="Ir al inicio">
+      <img class="escudo" src="assets/escudo-utea.png" alt="Escudo" width="92" height="92" hidden>
+    </a>
+    <div class="header-main">
+      <div class="header-top">
+        <a class="logo" href="#inicio" aria-label="Fuleras UTEA — ir al inicio">
+          <span class="logo__text">Fuleras<small>UTEA</small></span>
+        </a>
+        <a class="btn btn--sm" href="#contacto">✍️ Confesar</a>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li class="nav-flame" aria-hidden="true">🔥</li>
+          <li><a href="#inicio"      data-route="inicio">🏠 Inicio</a></li>
+          <li><a href="#andahuaylas" data-route="andahuaylas">Andahuaylas</a></li>
+          <li><a href="#abancay"     data-route="abancay">Abancay</a></li>
+          <li><a href="#cusco"       data-route="cusco">Cusco</a></li>
+          <li><a href="#reglas"      data-route="reglas">📜 Reglas</a></li>
+          <li><a href="#contacto"    data-route="contacto">✉️ Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
-  <nav class="main-nav" aria-label="Navegación principal">
-    <ul>
-      <li><a href="#inicio"      data-route="inicio">🏠 Inicio</a></li>
-      <li><a href="#andahuaylas" data-route="andahuaylas">Andahuaylas</a></li>
-      <li><a href="#abancay"     data-route="abancay">Abancay</a></li>
-      <li><a href="#cusco"       data-route="cusco">Cusco</a></li>
-      <li><a href="#reglas"      data-route="reglas">📜 Reglas</a></li>
-      <li><a href="#contacto"    data-route="contacto">✉️ Contacto</a></li>
-    </ul>
-  </nav>
   <div class="ticker" aria-hidden="true">
     <div class="ticker__track">
       <span>🚨 Alerta de chisme</span><span>Cero nombres, mil historias</span><span>Confiesa sin miedo</span><span>Los exitosos uteínos no perdonan</span>
